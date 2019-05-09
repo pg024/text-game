@@ -15,7 +15,7 @@ def bivio():
 	elif "sx" in scelta.lower():
 	 sacchetto = random.randint(1, 50)
 	 print(f"La strada è libera, per terra trovi un sacchetto con {sacchetto} scellini belgi")
-	 nazi()
+	 return nazi(sacchetto)
 	else: 
 	 print("non ho capito la tua scelta, riprova")
 	 return bivio()
@@ -55,13 +55,14 @@ def morra():
    return last_step()
 	 	 
 	
-def nazi():
+def nazi(s):
  print("""Un bullo ti sbarra la strada,
           Vuoi provare a corromperlo con il tuo tesoro?""")
  scelta = input("Yes/No ")
  if "yes" in scelta.lower():
   minimo = random.randint(1, 50)
-  if minimo >= sacchetto:
+  print(f"il bullo avrebbe accettato un'offerta minima di {minimo}")
+  if minimo >= s:
    dead()
   else:
    print("Il bullo accetta i tuoi soldi e ti lascia passare, ben fatto!")
