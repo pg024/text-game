@@ -1,6 +1,7 @@
 from sys import exit 
 import random
 from os.path import exists
+import shamir
 
 def dead():
  print("Mi dispiace, hai perso.")
@@ -16,8 +17,9 @@ def dead():
    print("Non ho capito, puoi ripetere?")
 
 def bivio():
- print("Ti trovi a un bivio. Dx o Sx?")
+ print("Attraversi la porta. C'è un bivio. Dx o Sx?")
  scelta = input("> ")
+ list=['dx','sx']
  if "dx" in scelta.lower():
   print("Incontri dei nazi, ti picchiano a morte")		
   dead()
@@ -101,9 +103,15 @@ def caverna
  elif int(scelta) == 2:
   return zaino()
  elif int(scelta) == 5:
-  exists
+  print("Vedi un'elaboratore, con due piccole fessure")
+  exists1 = os.path.isfile('hash1.txt')
+  exists2 = os.path.isfile('hash2.txt')
+   if exists1 and exists2:
+    #chiama shamir secret
+   else: 
+
 def start()
- print("Ti trovi in ")
+ print("Ti guardi attorno.")
  print("Cosa vuoi fare?\n")
  print("[1]Esplora la caverna")
  print("[2]Esamina il contenuto dello zaino")
@@ -114,9 +122,10 @@ def start()
  elif int(scelta) == 2:
   return zaino()
  elif int(scelta) == 3:
-  
 
+print("Ciao Punk! Qual è il tuo nome?")
+nome = input("> ")
+print(f"Ok {nome}, ti sei svegliato in questa caverna")
+print("hai con te uno zaino")
  
-	
-	 
 start()
