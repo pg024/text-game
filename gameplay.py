@@ -1,28 +1,37 @@
-from sys import exit
+from sys import exit 
 import random
+from os.path import exists
 
 def dead():
-	print("Mi dispiace, hai perso.")
-	exit(0)
+ print("Mi dispiace, hai perso.")
+ print("Vuoi continuare a giocare?")
+ while True:
+  scelta = input("Si/No> ")
+  if scelta.lower() == 'si':
+   return start()
+  elif scelta.lower() == 'no':
+   print("Arrivederci.")
+   exit(0)
+  else:
+   print("Non ho capito, puoi ripetere?")
 
 def bivio():
-	print("Ti trovi a un bivio. Dx o Sx?")
-	scelta = input("> ")
-
-	if "dx" in scelta.lower():
-	 print("sei morto, dei nazi ti hanno picchiato a morte")		
-	 dead()
-	elif "sx" in scelta.lower():
-	 sacchetto = random.randint(1, 50)
-	 print(f"La strada è libera, per terra trovi un sacchetto con {sacchetto} scellini belgi")
-	 return nazi(sacchetto)
-	else: 
-	 print("non ho capito la tua scelta, riprova")
-	 return bivio()
+ print("Ti trovi a un bivio. Dx o Sx?")
+ scelta = input("> ")
+ if "dx" in scelta.lower():
+  print("Incontri dei nazi, ti picchiano a morte")		
+  dead()
+ elif "sx" in scelta.lower():
+  sacchetto = random.randint(1, 50)
+  print(f"La strada è libera, per terra trovi un sacchetto con {sacchetto} scellini belgi")
+  return nazi(sacchetto)
+ else: 
+  print("non ho capito la tua scelta, riprova")
+  return bivio()
 
 def last_step():
-	print("Ce l'hai fatta, sei un campione\n")
-	exit(0)
+ print("Ce l'hai fatta, sei un campione\n")
+ exit(0)
 
 def morra():
  score_hero = 0
@@ -48,13 +57,22 @@ def morra():
    score_hero = score_hero + 1
 
   if score_nazi == 3:
-   print("Hai perso! Il nazi ti picchia")
+   print("Hai perso! Il bullo ti picchia")
    return dead()
   else:
-   print("Olè, VITTORIA!")
-   return last_step()
-	 	 
-	
+   print("""Olè, VITTORIA!
+Il bullo scappando droppa un pezzo di carta contenente una stringa alfanumerica
+Lo raccogli.""")
+
+   scelta = input(">Si/No")
+   if scelta.lower() == 'si':
+    f = open("hash1.txt", "w+")
+    f.write("hash")
+    f.close()
+   else:
+    
+   return start()
+		 
 def nazi(s):
  print("""Un bullo ti sbarra la strada,
  Vuoi provare a corromperlo con il tuo tesoro?""")
@@ -66,9 +84,39 @@ def nazi(s):
    dead()
   else:
    print("Il bullo accetta i tuoi soldi e ti lascia passare, ben fatto!")
-  last_step()
+   return start(0)
+   start()
  if "no" in scelta.lower():
   print("\n Ok allora lo sfidi a morra cinese \n ")
   morra()
+
+def caverna 
+ print("[1]Porta bivio")
+ print("[2]Porta 
+ print("[5]Porta di Shamir)")
+  
+ scelta = input("> ")
+ if int(scelta) == 1:
+  return caverna()
+ elif int(scelta) == 2:
+  return zaino()
+ elif int(scelta) == 5:
+  exists
+def start()
+ print("Ti trovi in ")
+ print("Cosa vuoi fare?\n")
+ print("[1]Esplora la caverna")
+ print("[2]Esamina il contenuto dello zaino")
+ print("[3]")
+ scelta = input("> ")
+ if int(scelta) == 1:
+  return caverna()
+ elif int(scelta) == 2:
+  return zaino()
+ elif int(scelta) == 3:
+  
+
+ 
+	
 	 
 start()
