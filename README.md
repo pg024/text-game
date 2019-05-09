@@ -1,2 +1,2 @@
 # text-game
-un'avventura testuale scritta in python
+Un'avventura testuale scritta in python
