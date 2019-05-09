@@ -57,7 +57,7 @@ def morra():
 	
 def nazi(s):
  print("""Un bullo ti sbarra la strada,
-          Vuoi provare a corromperlo con il tuo tesoro?""")
+ Vuoi provare a corromperlo con il tuo tesoro?""")
  scelta = input("Yes/No ")
  if "yes" in scelta.lower():
   minimo = random.randint(1, 50)
@@ -66,9 +66,9 @@ def nazi(s):
    dead()
   else:
    print("Il bullo accetta i tuoi soldi e ti lascia passare, ben fatto!")
- last_step()
+  last_step()
  if "no" in scelta.lower():
-  print("Ok allora lo sfidi a morra cinese")
+  print("\n Ok allora lo sfidi a morra cinese \n ")
   morra()
 	 
 bivio()
