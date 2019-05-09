@@ -71,4 +71,4 @@ def nazi(s):
   print("\n Ok allora lo sfidi a morra cinese \n ")
   morra()
 	 
-bivio()
+start()
