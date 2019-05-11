@@ -36,35 +36,41 @@ def last_step():
  exit(0)
 
 def morra():
+ def morra():
  score_hero = 0
  score_nazi = 0
- print("Al meglio delle tre, GO!\n")
+ print("\n")
+ print("Ti sfido a carta pietra forbice lucertola spock!")
+ print("Al meglio delle cinque, GO!\n")
 		
- while score_hero < 3 and score_nazi < 3:
+ while score_hero < 5 and score_nazi < 5:
   print("Il tuo score è: ", score_hero)
-  print("Lo score del nazi è: ", score_nazi)
-  print("Scegli: [1]Carta [2]Forbice [3]Sasso")
-  lista = ['carta', 'forbice', 'sasso']
+  print("Lo score del nazi è: ", score_nazi, "\n")
+  print("Scegli: [1]Carta [2]Forbice [3]Sasso [4]Lucertola [5]Spock")
+  lista = ['carta', 'forbice', 'sasso', 'lucertola', 'spock']
   colpo = lista[int(input("> "))-1]
   colponazi = random.choice(lista)
+  print("\n")
   print(f"il tuo avversario ha scelto {colponazi}\n")
  		
   if colpo == colponazi:
    print("pareggio, come on!\n")
-  elif (colpo == 'carta' and colponazi == 'forbice') or (colpo == 'forbice' and colponazi == 'sasso') or (colpo == 'sasso' and colponazi == 'carta'):
+  elif (colpo == 'carta' and colponazi == 'forbice') or (colpo == 'carta' and colponazi == 'lucertola') or (colpo == 'forbice' and colponazi == 'sasso') or (colpo == 'forbice' and colponazi == 'spock') or (colpo == 'sasso' and colponazi == 'carta') or (colpo == 'sasso' and colponazi == 'Spock') or (colpo == 'lucertola' and colponazi == 'forbice') or (colpo == 'lucertola' and colponazi == 'sasso') or (colpo == 'spock' and colponazi == 'paper') or (colpo == 'spock' and colponazi == 'lucertola'):
    print("argh!\n")
    score_nazi = score_nazi + 1
   else:
    print("un punto per noi!\n")
    score_hero = score_hero + 1
 
-  if score_nazi == 3:
-   print("Hai perso! Il bullo ti picchia")
-   return dead()
-  else:
+  if score_nazi == 5:
+   print(f"Hai perso! Il nazi vince {score_nazi} a {score_hero} e ti picchia\n ")
+   dead()
+  elif score_hero == 5:
+   print(f"Olè, VITTORIA, vinci {score_hero} a {score_nazi}!\n ")
+   else:
    print("""Olè, VITTORIA!
 Il bullo scappando droppa un pezzo di carta contenente una stringa alfanumerica
-Lo raccogli.""")
+Lo raccogli?""")
 
    scelta = input(">Si/No")
    if scelta.lower() == 'si':
